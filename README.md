@@ -1,60 +1,85 @@
 # TerraPulse — *The GPS for Agriculture*
 
-**TerraPulse** is an AI-powered satellite and field intelligence platform built for the **NASA Space Apps Challenge**.  
-It turns complex satellite, weather, and terrain data into **simple, practical, everyday advice for farmers**—while still offering deep scientific charts and neural network telemetry underneath.
+> **Authors:** Gkekas Georgios, Kyritsis Thomas  
+> **Project Paper:** *TerraPulse: A Precision Digital Agriculture Platform Leveraging NASA Earth Observation Data and Specialized Neural Networks* — [Read the Full Paper (PDF)](<ADD_PAPER_LINK_OR_PATH>)
+
+---
+
+## Project Links & Media
+
+- **Canva Presentation:** [View TerraPulse Pitch Deck on Canva](https://canva.link/r5jtxxe224ry0d1)
+- **Project Presentation Video:** [Watch Project Presentation Video](<https://drive.google.com/file/d/1KTQRnMQKJkp-btpLyhbxGofnwF-hJcvI/view?usp=drive_link>)
+- **App Demonstration Video:** [Watch Live App Demonstration Video](<https://drive.google.com/file/d/1YKEYSEw5SVeWuajMEjBvSNLHj8_wdQml/view?usp=drive_link>)
+- **Technical Paper (PDF):** [TerraPulse Scientific Paper (9 pages, incl. Appendix & System Screenshots)](<https://drive.google.com/file/d/1Itrr0SEqXuZhnRUyevfTjdnPLwHSKElD/view?usp=drive_link>)
+
+---
+
+## Overview
+
+**TerraPulse** is an AI-powered precision agriculture and satellite intelligence platform built for the **NASA Space Apps Challenge**.  
+As detailed in our accompanying technical paper, it bridges the gap between complex Earth Observation (EO) telemetry and practical, everyday decisions at the field level—translating multi-sensor satellite baselines and live meteorological feeds into **simple, actionable guidance for farmers**, supported by deep scientific charts and neural network analytics underneath.
 
 ---
 
 ## Why TerraPulse?
 
-Farmers face four growing challenges:
-1. **Drought & Water Waste:** Not knowing *when* or *how much* to irrigate wastes water and pumping electricity.
-2. **Soil Exhaustion:** Continuous farming drains organic matter and forces farmers to buy more synthetic fertilizer.
-3. **Crop Monoculture:** Planting the same crop every year hurts yields and invites pests.
-4. **Fires & Extreme Storms:** Bare or sloped land after a wildfire or heatwave can lose its fertile topsoil in the very first heavy rain.
+Modern farmers face four interconnected challenges under a changing climate:
+1. **Drought & Water Waste:** Irregular rainfall and heatwaves reduce root-zone soil moisture, while watering without telemetry wastes water and pumping electricity.
+2. **Soil Exhaustion & Erosion:** Continuous monoculture drains organic matter, accelerates topsoil erosion, and drives up chemical fertilizer dependency.
+3. **The Crop Rotation Dilemma:** Choosing the right next crop requires balancing soil history, aridity, nitrogen needs, and farm profitability.
+4. **Wildfires & Extreme Storms:** After wildfires or severe weather, sloped farmland can lose its fertile topsoil in the very first heavy rain unless stabilized immediately.
 
-**TerraPulse solves all four in one place.** You click a field on the map (or draw its exact shape), and four neural networks analyze the land, fetch live weather forecasts, and tell you—in plain language—**what is happening and what to do tomorrow morning**.
+**TerraPulse solves all four in one unified interface.** You click any location or draw your exact field boundary on the map, and four specialized PyTorch neural networks analyze the land, fuse live weather forecasts, and explain—in plain language—**what is happening and what to do tomorrow morning**.
 
 ---
 
 ## Key Features
 
-- **Interactive 3D Earth Landing Page:** A Three.js 3D globe with orbital satellite animations introducing the platform.
-- **Interactive Field Map OS (Leaflet):**
-  - Switch between **Dark OS**, **Satellite**, and **NDVI / Topo** map layers.
-  - Search any region in the world (powered by OpenStreetMap Nominatim).
-  - **Draw any field polygon** to automatically measure its real area in **hectares & stremmata** without losing your zoom level.
-  - **3×3 Variable Rate (VRA) Sub-Grid:** Color-coded zones inside your field showing which corner is drier or needs `+15%` / `-15%` water.
-  - **Compare Two Fields (Field A vs Field B):** Save any two plots and compare their stress, soil health, erosion risk, and annual savings side-by-side.
+- **Interactive 3D Earth Landing Page:** A Three.js 3D globe with dual orbital rings and a moving satellite marker introducing TerraPulse, with instant Dark/Light theme and `GR ↔ EN` language toggles.
+- **Interactive Field Map OS (Leaflet + Leaflet.Draw):**
+  - Switch between **Dark OS**, **Satellite**, and **NDVI / Topo** base layers.
+  - Search any city or farming region worldwide (powered by **OpenStreetMap Nominatim**—demonstrated live on fields such as **Nafpaktos**, **Larissa**, **Aetolia**, **Crete**, and **Giannitsa**).
+  - **Draw any field polygon** to automatically calculate its real geodesic area in **hectares & stremmata** without resetting your zoom level.
+  - **3×3 Variable Rate Application (VRA) Sub-Grid:** Displays 9 color-coded micro-zones inside your field (`+15%`, `0%`, `-15%` dose adjustments) to demonstrate sub-field micro-zoning.
+  - **Compare Two Fields (Field A vs Field B):** Save any two fields and compare their water stress, soil health, erosion risk, and annual savings side-by-side.
 - **Two-Layer Data Analysis Suite:**
-  - **Top ("At a Glance"):** Plain-language explanation, circular progress gauge, and a 1-2-3 step-by-step action checklist any farmer can understand immediately.
-  - **Bottom ("Further Analytics"):** Gradient Chart.js graphs, regional benchmarks, cost comparisons (€), live 7-day rain-aware irrigation schedule, interactive mini-maps, and full scientific summaries.
-- **Interactive "What-If" Farmer Simulator:** Change your **Crop** (*Wheat, Cotton, Corn, Olives, Vineyard, Alfalfa*), **Irrigation Method** (*Flood, Sprinkler, Drip*), or **Weather Scenario** (*Live Forecast, Heatwave, Post-Fire Storm*) to test savings and risks in real time.
-- **Voice Briefing ("Listen"):** Built-in Web Speech API reads the active field guidance aloud in **Greek** or **English**.
-- **100% Bilingual (`EN ↔ GR`) & Light/Dark Mode:** Switches every label, chart, voice readout, and AI review between Greek and English.
-- **Clean 1-Page PDF Export:** Dedicated print layout turns the analysis into a crisp, white agronomist prescription sheet.
+  - **Layer 1 — At a Glance (For the Farmer):** A circular animated gauge, a plain-language headline and explanation, and a 1-2-3 step-by-step morning action plan.
+  - **Layer 2 — Further Satellite Analytics:** Multi-series Chart.js gradient graphs, regional benchmarks, annual cost breakdowns (€), a live 7-day rain-aware irrigation schedule, interactive mini-maps with radar sweeps, and a full scientific summary.
+- **Interactive "What-If" Farmer Simulator:** Change **Crop** (*Durum Wheat, Cotton, Corn, Olive Grove, Vineyard, Alfalfa*), **Irrigation Method** (*Flood Furrow 52%, Overhead Sprinkler 74%, Subsurface Drip 93%*), or **Weather Scenario** (*Live Forecast, Heatwave +5.5°C, Post-Fire Storm*) to watch every prediction, chart, and recommendation update in real time.
+- **Voice Briefing ("Listen"):** Built-in **Web Speech API** reads the active field advisory aloud in **Greek (`el-GR`)** or **English (`en-US`)**.
+- **100% Bilingual (`GR ↔ EN`) & True Dark/Light Theme:** Translates every UI element, chart label, voice readout, SMS alert, and scientific report on the fly.
+- **Clean 1-Page PDF Prescription Export:** Dedicated `@media print` styling turns the dashboard into a clean, white, ink-friendly agronomist prescription sheet.
 
 ---
 
 ## How the 4 PyTorch Neural Networks Work
 
-TerraPulse runs **four specialized PyTorch models** fed by live weather, soil moisture, elevation slope, and vegetation indices:
+Because multi-year, field-level labeled datasets spanning all four domains are scarce, the four PyTorch networks are implemented as **biophysically grounded surrogate models** trained on agro-climatic datasets parameterized with NASA EO-informed priors (**NASA POWER, SMAP, ECOSTRESS, GPM, Landsat, MODIS, SRTM**) and established domain models (**FAO-56**, **RUSLE**, biological nitrogen fixation **BNF**, and post-fire **dNBR** runoff curves):
 
-| Network | Focus | What It Outputs | How It Helps the Farmer |
+| Network | Focus | Key Inputs | Outputs & Farmer Value |
 | :--- | :--- | :--- | :--- |
-| **Network 1 — Water** | Drought & Irrigation | Root-zone water stress (`0–1`) | Calculates exact `m³/stremma`, best watering hours (`05:00–07:00`), and skips watering when rain is forecast. |
-| **Network 2 — Soil** | Degradation & Depletion | `health_proxy` & `erosion_proxy` (`0–1`) | Detects tired soil, checks NPK & organic carbon balance, and recommends no-till or cover crops to cut fertilizer bills. |
-| **Network 3 — Rotation** | Crop Matchmaking | Suitability scores & `N₂` fixation | Suggests the best next crop (e.g., drought-resilient legumes) to naturally put free nitrogen back into the soil. |
-| **Network 4 — Fire & Floods** | Extreme Events | `erosion_risk` & `recovery_score` (`0–1`) | Calculates post-fire/storm landslide risk from terrain slope, simulates 12-month plant rebound, and previews a **72h SMS alert**. |
+| **Network 1 — Water** | Drought & Irrigation | 6-month temperature, rainfall, soil moisture, NDVI, slope, `ET₀` | Predicts root-zone water stress (`0–1`), exact `m³/stremma`, best watering hours (`05:00–07:00`), and skips irrigation when rain (`≥ 4 mm`) is forecast. |
+| **Network 2 — Soil** | Degradation & Depletion | Spectral vegetation, organic matter, slope, rainfall, aridity | Outputs `health_proxy` & `erosion_proxy` (`0–1`), NPK & carbon balance, and no-till / cover-crop advice to cut fertilizer costs. |
+| **Network 3 — Rotation** | Crop Matchmaking | Aridity, soil organic matter, terrain slope, moisture | Scores rotation crops (Legumes, Alfalfa, Wheat, Sorghum), estimates free **BNF** (`kg N/ha`), projects 3-year nitrogen recovery, and compares ROI. |
+| **Network 4 — Fire & Floods** | Extreme Events | Burn severity (`dNBR`), slope, vegetation state, canopy heat | Outputs post-fire `erosion_risk` & `recovery_score` (`0–1`), simulates 12-month vegetation rebound, creates a 72h rapid-seeding plan, and previews a **72h Farmer SMS Alert**. |
+
+---
+
+## Projected Ecological & Economic Impact (Literature-Benchmarked)
+
+As documented in our paper, by translating sensor-driven scheduling and legume-diversified rotation principles into an accessible tool, TerraPulse targets the following peer-reviewed benchmarks:
+- **27–45% Projected Water Conservation** compared to conventional scheduling without hurting crop yield.
+- **Up to 40% Reduction in Synthetic Nitrogen Dependency** through strategic integration of nitrogen-fixing legumes (`32–115 kg N/ha/year` BNF) and soil organic carbon restoration.
+- **Lower Operational Costs (OPEX)** on irrigation energy and chemical inputs, alongside improved harvest resilience under extreme climate shocks.
 
 ---
 
 ## Live Data Sources
 
-- **Open-Meteo Forecast & Soil Moisture API:** Live 7-day temperature, rainfall, `ET₀` evapotranspiration, and volumetric root-zone soil moisture (`0–28 cm`).
-- **Open-Meteo 5-Point Elevation API:** Real terrain elevation and calculated slope angle (`°`) around your exact coordinates.
+- **Open-Meteo Forecast & Soil Moisture API:** 30 days of historical temperature/rainfall plus a live 7-day forecast, FAO reference evapotranspiration (`ET₀`), and volumetric root-zone soil moisture (`7–28 cm`).
+- **Open-Meteo 5-Point Elevation API:** Queries elevation at the field center and four surrounding offsets to compute true terrain slope (`°`).
 - **OpenStreetMap Nominatim:** Worldwide place and region search.
-- *(Graceful Offline Fallback: If there is no internet connection, the backend automatically switches to deterministic telemetry synthesis so the app never crashes.)*
+- *(Offline Fallback: A 10-minute in-memory cache and deterministic telemetry fallback ensure the platform always runs smoothly even without internet access.)*
 
 ---
 
@@ -62,8 +87,9 @@ TerraPulse runs **four specialized PyTorch models** fed by live weather, soil mo
 
 ```text
 terra_pulse/
+├── README.md                       # Project documentation
 ├── terra_pulse_frontend/
-│   ├── index.html                  # Main HTML layout (Landing, Map OS, Analysis Suite)
+│   ├── index.html                  # Main HTML layout (3D Globe, Map OS, 5-Tab Analysis Suite)
 │   ├── logo.png                    # TerraPulse brand logo & favicon
 │   ├── css/
 │   │   └── styles.css              # Light/Dark CSS variables, HUD styling, animations & print sheet
@@ -77,6 +103,7 @@ terra_pulse/
 │
 └── terra_pulse_backend/
     ├── main.py                     # FastAPI entry point + CORS + router registration
+    ├── requirements.txt            # Python dependencies (fastapi, uvicorn, torch)
     ├── core/
     │   ├── config.py               # Crop coefficients (Kc), irrigation efficiencies & paths
     │   ├── model_loader.py         # PyTorch architectures, .pth weights & preprocess.json loaders
@@ -103,21 +130,15 @@ terra_pulse/
 Make sure Python 3.10+ is installed, then install the backend dependencies:
 
 ```bash
-pip install fastapi uvicorn torch
-```
-
-Move into the backend folder and start the API server:
-
-```bash
 cd terra_pulse_backend
+pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-The API will run at **`http://localhost:8000`**.  
-*(Optional: You can inspect interactive API docs anytime at `http://localhost:8000/docs`.)*
+The API will run at **`http://localhost:8000`** (interactive docs at `http://localhost:8000/docs`).
 
 ### 2. Start the Frontend
-Open `terra_pulse_frontend/index.html` using **VS Code Live Server** (recommended, e.g., `http://127.0.0.1:5500/terra_pulse_frontend/index.html`) or Python's built-in HTTP server:
+Open `terra_pulse_frontend/index.html` using **VS Code Live Server** (recommended) or Python's built-in HTTP server:
 
 ```bash
 cd terra_pulse_frontend
@@ -127,7 +148,7 @@ python -m http.server 5500
 Then open **`http://localhost:5500`** in your browser.
 
 ### 3. (Optional) Retrain the 4 Neural Networks
-If you want to regenerate or retrain the `.pth` weight files and preprocessing `.json` files from scratch:
+To regenerate or retrain the `.pth` weight files and preprocessing `.json` scalers from scratch:
 
 ```bash
 cd terra_pulse_backend
@@ -143,4 +164,4 @@ python training/train_network4_fire.py
 
 - **Frontend:** HTML5, Tailwind CSS, Vanilla Modular JavaScript, Three.js, Leaflet + Leaflet.Draw, Chart.js, Web Speech API
 - **Backend:** Python, FastAPI, Uvicorn, PyTorch
-- **Data & Maps:** Open-Meteo (Forecast, Soil Moisture, Elevation), OpenStreetMap / Nominatim, Esri World Imagery, OpenTopoMap
+- **Data & Maps:** Open-Meteo (Forecast, Soil Moisture, Elevation), OpenStreetMap / Nominatim, Esri World Imagery, OpenTopoMap, NASA EO Baselines (POWER, SMAP, ECOSTRESS, GPM, Landsat, MODIS, SRTM)
