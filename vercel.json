@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "terra_pulse_backend/main.py",
-      "use": "@vercel/python",
-      "config": {
-        "excludeFiles": "{terra_pulse_frontend/**,terra_pulse_backend/training/**,**/__pycache__/**,**/*.md,.git/**}"
-      }
+      "use": "@vercel/python"
     },
     {
       "src": "terra_pulse_frontend/**",
@@ -20,7 +17,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "terra_pulse_frontend/$1"
+      "dest": "/terra_pulse_frontend/$1"
     }
   ]
 }
