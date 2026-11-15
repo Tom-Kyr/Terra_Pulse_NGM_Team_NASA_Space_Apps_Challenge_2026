@@ -8,7 +8,7 @@
 ## Project Links & Media
 
 - **Canva Presentation:** [View TerraPulse Pitch Deck on Canva](https://canva.link/r5jtxxe224ry0d1)
-- **Project Presentation Video:** [Watch Project Presentation Video](<https://drive.google.com/file/d/1KTQRnMQKJkp-btpLyhbxGofnwF-hJcvI/view?usp=drive_link>)
+- **Project Presentation Video:** [Watch Project Presentation Video](<https://drive.google.com/file/d/1H2_RAsfx15EeBXayk801OG2dDIiEk_Ui/view?usp=drive_link>)
 - **App Demonstration Video:** [Watch Live App Demonstration Video](<https://drive.google.com/file/d/1H2_RAsfx15EeBXayk801OG2dDIiEk_Ui/view?usp=drive_link>)
 - **Technical Paper (PDF):** [TerraPulse Scientific Paper (9 pages, incl. Appendix & System Screenshots)](<https://drive.google.com/file/d/1Itrr0SEqXuZhnRUyevfTjdnPLwHSKElD/view?usp=drive_link>)
 
