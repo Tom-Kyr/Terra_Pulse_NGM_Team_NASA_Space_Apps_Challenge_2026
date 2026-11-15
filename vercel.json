@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "terra_pulse_backend/main.py",
+      "use": "@vercel/python",
+      "config": {
+        "excludeFiles": "{terra_pulse_frontend/**,terra_pulse_backend/training/**,**/__pycache__/**,**/*.md,.git/**}"
+      }
+    },
+    {
+      "src": "terra_pulse_frontend/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "terra_pulse_backend/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "terra_pulse_frontend/$1"
+    }
+  ]
+}
